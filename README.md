@@ -1,4 +1,22 @@
-# Welcome to your Lovable project
+# Intellivision Services Website
+
+## Project Overview
+
+**Website**: https://intellivisionservices.com
+
+A modern, responsive website for Intellivision Services - a premium BPO and call center solutions provider. Built with React, TypeScript, and Tailwind CSS.
+
+## Features
+
+- Modern React application with TypeScript
+- Responsive design with Tailwind CSS
+- Multiple service pages and business information
+- Contact forms and interactive elements
+- Automated deployment via GitHub Actions
+
+## Development
+
+To work on this project locally, clone the repository and install dependencies:ovable project
 
 ## Project info
 
@@ -60,14 +78,15 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## How to Deploy
 
-Simply open [Lovable](https://lovable.dev/projects/a883d7d8-adb1-46bc-a55c-d7fdf3a8ce0f) and click on Share -> Publish.
+This project is automatically deployed to GitHub Pages via GitHub Actions whenever changes are pushed to the main branch.
 
-## Can I connect a custom domain to my Lovable project?
+**Live Website**: [https://intellivisionservices.com](https://intellivisionservices.com)
 
-Yes, you can!
+## Custom Domain Setup
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The website is configured with a custom domain (intellivisionservices.com) using:
+- CNAME file for domain configuration
+- GitHub Pages with custom domain support
+- Automatic SSL certificate provisioning
