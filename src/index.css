@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Intellivision Services Design System - Blue & White Theme */
+
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    /* Card System */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --card-hover: 214 100% 98%;
+
+    /* Interactive Elements */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Primary Blue Palette */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 220 100% 40%;
+    --primary-light: 214 100% 85%;
+
+    /* Secondary & Accents */
+    --secondary: 214 100% 98%;
+    --secondary-foreground: 222 47% 11%;
+    --accent: 217 100% 97%;
+    --accent-foreground: 220 100% 40%;
+
+    /* Muted Tones */
+    --muted: 210 29% 97%;
+    --muted-foreground: 215 25% 27%;
+
+    /* System Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+
+    /* Design System */
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(217 100% 70%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--accent)) 100%);
+    --gradient-bg: radial-gradient(ellipse at top, hsl(var(--accent)) 0%, hsl(var(--background)) 70%);
+
+    /* Shadows & Effects */
+    --shadow-card: 0 4px 24px hsl(217 91% 60% / 0.1);
+    --shadow-card-hover: 0 8px 40px hsl(217 91% 60% / 0.15);
+    --shadow-floating: 0 20px 60px hsl(217 91% 60% / 0.1);
+    --shadow-glow: 0 0 40px hsl(217 91% 60% / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Spacing Scale */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode keeps blue theme but with darker backgrounds */
+    --background: 222 47% 4%;
+    --foreground: 0 0% 100%;
+    --card: 222 47% 8%;
+    --card-foreground: 0 0% 100%;
+    --card-hover: 222 47% 12%;
+    --primary: 217 91% 70%;
+    --primary-dark: 217 91% 50%;
+    --accent: 222 47% 12%;
+    --muted: 222 47% 15%;
+    --muted-foreground: 215 25% 70%;
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 217 91% 70%;
+    
+    --gradient-bg: radial-gradient(ellipse at top, hsl(222 47% 8%) 0%, hsl(var(--background)) 70%);
+    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 8px 40px hsl(0 0% 0% / 0.4);
+    --shadow-floating: 0 20px 60px hsl(0 0% 0% / 0.3);
+  }
+
+  /* 3D Flip Card Styles */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  /* Custom Utility Classes */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: var(--gradient-bg);
+  }
+
+  /* Floating Animation Keyframes */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+  }
+
+  @keyframes float-reverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(20px) rotate(-2deg); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: var(--shadow-card); }
+    50% { box-shadow: var(--shadow-glow); }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+@layer components {
+  /* Component Utilities */
+  .card-floating {
+    @apply bg-card/90 backdrop-blur-sm border border-border/50 rounded-xl shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-all duration-500;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent;
+  }
+
+  /* Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-reverse {
+    animation: float-reverse 8s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.6s ease-out forwards;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* Interactive Elements */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-[var(--shadow-card-hover)];
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[var(--shadow-glow)];
+  }
+}
